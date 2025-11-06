@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/confetti.css">
+  <style>
+    #header {
+      background-color: #0b124e;
+      border-radius: 10px;
+      padding: 5px;
+    }
+
+    .nav {
+      padding-right: 20px;
+    }
+
+    .nav ul li{
+      display:inline;
+      padding:0 10px
+    }
+
+    h1 {
+      text-align: center;
+      color: rgb(0, 0, 0);
+      margin: 8px;
+    }
+    #seccion {
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap
+    }
+
+    .barra {
+      padding: 10px;
+      margin:5px;
+      background: rgb(31, 32, 32);
+      flex:3;
+      border-radius:10px;
+      display:flex;
+      flex-flow:column;
+      align-items:center;
+    }
+
+    .contenido {
+      padding: 10px;
+      border-radius:10px;
+      background: rgb(251,241,100);
+      margin:5px;
+      flex:1 150px;
+    }
+
+    .subcontenido2 {
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    #resultado {
+      display:flex;
+      flex-direction:column;
+      flex-wrap:wrap;
+      align-items: center;
+    }
+    
+    #footer {
+      background-color: white;
+      height: 100%;
+      text-align: center;
+      padding-top: 10px;
+      border-radius: 10px;
+      display:flex;
+      flex-flow:row;
+    }
+    .pie {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    #galeria{
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap; 
+      height:100px;
+    }
+
+    .proyecto{
+      
+      height:150px;
+      max-width:150px;
+      background-color:rgb(255, 255, 255);
+      border-radius:10px;
+      margin:10px;
+      flex:1 100px;
+    }
+
+    .barra a {
+      display:block;
+    }
+    #imagen-interactiva {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      background-image: url('img/espacio.jpg');
+      background-size: cover;
+      border: 2px solid #000;
+      border-radius: 10px;
+    }
+
+    #hotspot1 {
+    position: absolute;
+    top: 250px;
+    left: 150px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/sol.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot2 {
+    position: absolute;
+    top: 220px;  
+    left: 250px; 
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/mercurio.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot3 {
+    position: absolute;
+    top: 180px; 
+    left: 170px; 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/venus.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot4 {
+    position: absolute;
+    top: 250px; 
+    left: 90px; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/tierra.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot5 {
+    position: absolute;
+    top: 180px;  
+    left: 300px; 
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/marte.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot6 {
+    position: absolute;
+    top: 220px;  
+    left: 370px; 
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/jupiter.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot7 {
+    position: absolute;
+    top: 340px; 
+    left: 300px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/saturno.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot8 {
+    position: absolute;
+    top: 500px;  
+    left: 30px; 
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/urano.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot9 {
+    position: absolute;
+    top: 0px;
+    left: 0px; 
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/neptuno.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+
+    .text-hotspot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+    }
+
+    #instrucciones {
+      flex:1;
+      cursor: pointer;
+    }
+
+    #prueba {
+      flex:1;
+      cursor:pointer;
+    }
+
+    .texto-rojo{
+            font-size:40px;
+            font-weight: bold;
+            color:red;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="nav" style="text-align:center;">
+      <h3>Bienvenido a "Conociendo el sistema solar"</h3>
+    </div>
+  </div>
+  <div id="seccion">
+    <div class="barra">
+        <div id="imagen-interactiva">
+          <div id="hotspot1"><span class="text-hotspot">sol</span></div>
+          <div id="hotspot2"><span class="text-hotspot">1</span></div>
+          <div id="hotspot3"><span class="text-hotspot">2</span></div>
+          <div id="hotspot4"><span class="text-hotspot">3</span></div>
+          <div id="hotspot5"><span class="text-hotspot">4</span></div>
+          <div id="hotspot6"><span class="text-hotspot">5</span></div>
+          <div id="hotspot7"><span class="text-hotspot">6</span></div>
+          <div id="hotspot8"><span class="text-hotspot">7</span></div>
+          <div id="hotspot9"><span class="text-hotspot">8</span></div>
+        </div>
+    </div>
+    <div class="contenido">
+      <div class="subcontenido1">
+        <h2 id="titulo-info">Instrucciones</h2>
+        <p id="texto-info">Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.</p>
+      </div>
+      <div class="subcontenido2">
+        <div class="proyecto">
+          <img id="imagen-info" src="images/hotspot-cursor.png" alt="Imagen info" style="width:100%; height:100%; border-radius:10px;">
+        </div>
+      </div>
+      <div id="resultado" class="invisible">
+        <h2>Tu resultado:</h2>
+        <span id="calif" class="texto-rojo">0/0</span>
+        <img id="imagen-resultado" width="200px" src="images/ping.gif" />
+      </div>      
+    </div>
+  </div>
+  <div id="footer">
+    <div id="instrucciones"><img width="100px" src="images/instrucciones.png" /></div>
+    <div id="prueba"><img width="100px" src="images/test.png" /></div>
+  </div>
+  <script type="text/javascript">
+    let puntaje = 0;
+    let pregunta1 = "";
+
+    document.getElementById('hotspot1').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Sol';
+      document.getElementById('texto-info').textContent = 'Es una estrella en el centro del sistema solar, compuesta principalmente de hidrógeno y helio. Su energía proviene de la fusión nuclear, que convierte hidrógeno en helio, liberando luz y calor. Tiene un diámetro de 1.39 millones de kilómetros, lo que equivale a 109 veces el de la Tierra. El Sol es crucial para la vida en la Tierra, proporcionando la energía necesaria para el clima y los procesos biológicos. Está en la mitad de su vida y tiene unos 4.6 mil millones de años, con aproximadamente 5 mil millones más antes de transformarse en una gigante roja.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/sol.gif');    
+    };
+
+    document.getElementById('hotspot2').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Mercurio';
+      document.getElementById('texto-info').textContent = 'Es el planeta más cercano al Sol y el más pequeño del sistema solar. Debido a su proximidad al Sol, las temperaturas en su superficie son extremadamente altas durante el día y bajan drásticamente por la noche. Mercurio no tiene atmósfera significativa, lo que contribuye a estas grandes fluctuaciones térmicas. Además, su órbita es la más rápida, completando una vuelta alrededor del Sol en solo 88 días terrestres.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/mercurio.gif');
+    };
+
+    document.getElementById('hotspot3').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Venus';
+      document.getElementById('texto-info').textContent = 'Conocido como el "gemelo de la Tierra" debido a su tamaño similar, Venus tiene una atmósfera densa compuesta principalmente de dióxido de carbono. Esta atmósfera genera un efecto invernadero extremo, lo que hace que las temperaturas en su superficie superen los 460°C, más calientes que las de Mercurio, a pesar de estar más lejos del Sol. Venus también gira en sentido opuesto al de la mayoría de los planetas, lo que se conoce como rotación retrógrada.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/venus.gif');    
+    };
+    document.getElementById('hotspot4').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Tierra';
+      document.getElementById('texto-info').textContent = 'Es el único planeta conocido que tiene agua en estado líquido en su superficie y vida. Su atmósfera, compuesta principalmente de nitrógeno y oxígeno, permite la existencia de una gran diversidad de ecosistemas. La Tierra tiene un único satélite natural, la Luna, y su órbita en torno al Sol tiene una duración de 365 días. Es el único planeta conocido en el sistema solar donde se puede observar una gran variedad de fenómenos climáticos y geológicos.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/tierra.gif');    
+    };
+    document.getElementById('hotspot5').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Marte';
+      document.getElementById('texto-info').textContent = 'Conocido como el "planeta rojo" debido a su color característico, Marte tiene una atmósfera muy delgada, compuesta principalmente de dióxido de carbono. A pesar de sus temperaturas frías y su falta de agua líquida en la superficie, existen evidencias de que en el pasado Marte pudo haber tenido agua en forma de ríos y lagos. Marte tiene dos lunas pequeñas, Fobos y Deimos, que podrían ser asteroides capturados.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/marte.gif');    
+    };
+    document.getElementById('hotspot6').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Jupiter';
+      document.getElementById('texto-info').textContent = 'Es el gigante gaseoso más grande del sistema solar y se caracteriza por su atmósfera compuesta principalmente de hidrógeno y helio. Una de sus características más famosas es la Gran Mancha Roja, una tormenta gigante que ha estado activa durante siglos. Júpiter tiene al menos 79 lunas conocidas, incluyendo a Ganímedes, la luna más grande del sistema solar. Tiene un fuerte campo magnético y su órbita dura 12 años terrestres.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/jupiter.gif');    
+    };
+    document.getElementById('hotspot7').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Saturno';
+      document.getElementById('texto-info').textContent = 'Saturno: Famoso por sus impresionantes anillos, Saturno es otro gigante gaseoso compuesto principalmente de hidrógeno y helio. Aunque sus anillos son los más grandes y visibles, están formados por partículas de hielo y rocas pequeñas. Saturno tiene más de 80 lunas conocidas, siendo Titán una de las más destacadas, ya que posee una atmósfera densa y lagos de metano líquido.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/saturno.gif');    
+    };
+    document.getElementById('hotspot8').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Urano';
+      document.getElementById('texto-info').textContent = 'Es un gigante helado que se caracteriza por su color azul verdoso debido a la presencia de metano en su atmósfera. Urano tiene una rotación peculiar, ya que gira sobre su costado, lo que significa que sus polos están casi en el plano de su órbita. Además, su atmósfera está compuesta principalmente de hidrógeno, helio y agua. Urano tiene 27 lunas conocidas y su órbita alrededor del Sol dura 84 años terrestres.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/urano.gif');    
+    };
+    document.getElementById('hotspot9').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Neptuno';
+      document.getElementById('texto-info').textContent = 'Es el último planeta del sistema solar y también un gigante helado. Neptuno tiene una atmósfera compuesta principalmente de hidrógeno, helio y metano, lo que le da su color azul intenso. Posee vientos extremadamente rápidos y tormentas en su atmósfera, como la Gran Mancha Oscura. Neptuno tiene 14 lunas conocidas, siendo Tritón la más grande, que se caracteriza por su órbita retrógrada, lo que sugiere que podría haber sido capturada por el campo gravitacional del planeta.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/neptuno.gif');    
+    };
+    
+
+    document.getElementById('instrucciones').onclick = function(){
+      document.getElementById('titulo-info').textContent = 'Instrucciones';
+      document.getElementById('texto-info').textContent = 'Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.';
+      document.getElementById('imagen-info').setAttribute('src', 'images/hotspot-cursor.png');
+    };
+
+    document.getElementById('prueba').onclick = function(){
+      alert("Bienvenidos a la prueba de conocimientos");
+      alert("Responde correctamente todas las preguntas para ganar");
+
+      let puntaje = 0;
+
+if(pregunta1 = prompt("¿El Sol está compuesto principalmente de hidrógeno y helio?")) {
+    pregunta1 = pregunta1.trim();
+}
+
+if (pregunta1.toLowerCase() === "verdadero") {
+    alert("¡Correcto! El Sol está compuesto principalmente de hidrógeno y helio.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: verdadero.");
+}
+
+if(pregunta2 = prompt("¿Mercurio tiene una atmósfera densa compuesta principalmente de dióxido de carbono?")) {
+    pregunta2 = pregunta2.trim();
+}
+
+if (pregunta2.toLowerCase() === "falso") {
+    alert("¡Correcto! Mercurio no tiene una atmósfera significativa.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: falso.");
+}
+
+if(pregunta3 = prompt("¿Venus tiene una rotación retrógrada, lo que significa que gira en sentido contrario al de la mayoría de los planetas?")) {
+    pregunta3 = pregunta3.trim();
+}
+
+if (pregunta3.toLowerCase() === "verdadero") {
+    alert("¡Correcto! Venus tiene una rotación retrógrada.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: verdadero.");
+}
+
+if(pregunta4 = prompt("¿La Tierra tiene más de un satélite natural, siendo la Luna el más grande?")) {
+    pregunta4 = pregunta4.trim();
+}
+
+if (pregunta4.toLowerCase() === "falso") {
+    alert("¡Correcto! La Tierra solo tiene un satélite natural, la Luna.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: falso.");
+}
+
+if(pregunta5 = prompt("¿Marte tiene una atmósfera densa compuesta principalmente de dióxido de carbono?")) {
+    pregunta5 = pregunta5.trim();
+}
+
+if (pregunta5.toLowerCase() === "verdadero") {
+    alert("¡Correcto! Marte tiene una atmósfera delgada, pero compuesta principalmente de dióxido de carbono.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: verdadero.");
+}
+
+if(pregunta6 = prompt("¿Júpiter tiene al menos 79 lunas conocidas?")) {
+    pregunta6 = pregunta6.trim();
+}
+
+if (pregunta6.toLowerCase() === "verdadero") {
+    alert("¡Correcto! Júpiter tiene al menos 79 lunas conocidas.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: verdadero.");
+}
+
+if(pregunta7 = prompt("¿Saturno tiene más de 80 lunas conocidas, y Titán es una de las más destacadas?")) {
+    pregunta7 = pregunta7.trim();
+}
+
+if (pregunta7.toLowerCase() === "verdadero") {
+    alert("¡Correcto! Saturno tiene más de 80 lunas conocidas, y Titán es una de las más destacadas.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: verdadero.");
+}
+
+if(pregunta8 = prompt("¿Urano tiene una atmósfera compuesta principalmente de oxígeno y nitrógeno?")) {
+    pregunta8 = pregunta8.trim();
+}
+
+if (pregunta8.toLowerCase() === "falso") {
+    alert("¡Correcto! La atmósfera de Urano está compuesta principalmente de hidrógeno, helio y agua.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: falso.");
+}
+
+if(pregunta9 = prompt("¿Neptuno tiene vientos extremadamente rápidos y tormentas en su atmósfera?")) {
+    pregunta9 = pregunta9.trim();
+}
+
+if (pregunta9.toLowerCase() === "verdadero") {
+    alert("¡Correcto! Neptuno tiene vientos extremadamente rápidos y tormentas en su atmósfera.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: verdadero.");
+}
+
+if(pregunta10 = prompt("¿Neptuno tiene 14 lunas conocidas, siendo Tritón la más grande?")) {
+    pregunta10 = pregunta10.trim();
+}
+
+if (pregunta10.toLowerCase() === "verdadero") {
+    alert("¡Correcto! Neptuno tiene 14 lunas conocidas y Tritón es la más grande.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: verdadero.");
+}
+
+if(puntaje >= 1) {
+    alert("¡Felicidades! Has respondido correctamente " + puntaje + " preguntas.");
+    document.getElementById("calif").textContent = puntaje + "/10";
+    document.getElementById("resultado").setAttribute("class", "visible");  // Muestra el resultado
+} else {
+    alert("Has respondido " + puntaje + " preguntas correctamente. ¡Sigue intentando!");
+}
+
+    };
+  </script>
+</body>
+</html>
