@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/confetti.css">
   <style>
     #header {
-      background-color: #0b124e;
+      background-color: #4e5ac9;
       border-radius: 10px;
       padding: 5px;
     }
@@ -45,7 +44,7 @@
     .contenido {
       padding: 10px;
       border-radius:10px;
-      background: rgb(251,241,100);
+      background: rgb(73, 119, 180);
       margin:5px;
       flex:1 150px;
     }
@@ -102,7 +101,7 @@
       position: relative;
       width: 600px;
       height: 600px;
-      background-image: url('img/espacio.jpg');
+      background-image: url('img/Espacio.jpg');
       background-size: cover;
       border: 2px solid #000;
       border-radius: 10px;
@@ -288,19 +287,19 @@
       </div>
       <div class="subcontenido2">
         <div class="proyecto">
-          <img id="imagen-info" src="images/hotspot-cursor.png" alt="Imagen info" style="width:100%; height:100%; border-radius:10px;">
+          <img id="imagen-info" src="img/hotspot-cursor.png" alt="Imagen info" style="width:100%; height:100%; border-radius:10px;">
         </div>
       </div>
       <div id="resultado" class="invisible">
         <h2>Tu resultado:</h2>
         <span id="calif" class="texto-rojo">0/0</span>
-        <img id="imagen-resultado" width="200px" src="images/ping.gif" />
+        <img id="imagen-resultado" width="200px" src="img/ping.gif" />
       </div>      
     </div>
   </div>
   <div id="footer">
-    <div id="instrucciones"><img width="100px" src="images/instrucciones.png" /></div>
-    <div id="prueba"><img width="100px" src="images/test.png" /></div>
+    <div id="instrucciones"><img width="100px" src="img/instrucciones.png" /></div>
+    <div id="prueba"><img width="100px" src="img/test.png" /></div>
   </div>
   <script type="text/javascript">
     let puntaje = 0;
@@ -358,7 +357,7 @@
     document.getElementById('instrucciones').onclick = function(){
       document.getElementById('titulo-info').textContent = 'Instrucciones';
       document.getElementById('texto-info').textContent = 'Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.';
-      document.getElementById('imagen-info').setAttribute('src', 'images/hotspot-cursor.png');
+      document.getElementById('imagen-info').setAttribute('src', 'img/hotspot-cursor.png');
     };
 
     document.getElementById('prueba').onclick = function(){
@@ -488,4 +487,4 @@ if(puntaje >= 1) {
     };
   </script>
 </body>
-</html> fer me caes bien 
+</html> 
