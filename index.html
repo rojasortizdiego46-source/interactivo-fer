@@ -283,7 +283,7 @@
     <div class="contenido">
       <div class="subcontenido1">
         <h2 id="titulo-info">Instrucciones</h2>
-        <p id="texto-info">Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.</p>
+        <p id="texto-info">Haz click en cada uno de los planetas para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.</p>
       </div>
       <div class="subcontenido2">
         <div class="proyecto">
@@ -293,7 +293,7 @@
       <div id="resultado" class="invisible">
         <h2>Tu resultado:</h2>
         <span id="calif" class="texto-rojo">0/0</span>
-        <img id="imagen-resultado" width="200px" src="img/ping.gif" />
+        <img id="imagen-resultado" width="200px" src="img/ping.gif"  style="display:none;"/>
       </div>      
     </div>
   </div>
@@ -362,7 +362,7 @@
 
     document.getElementById('prueba').onclick = function(){
       alert("Bienvenidos a la prueba de conocimientos");
-      alert("Responde correctamente todas las preguntas para ganar");
+      alert("Responde correctamente todas las preguntas para ganar con v/f");
 
       let puntaje = 0;
 
@@ -370,7 +370,7 @@ if(pregunta1 = prompt("¿El Sol está compuesto principalmente de hidrógeno y h
     pregunta1 = pregunta1.trim();
 }
 
-if (pregunta1.toLowerCase() === "verdadero") {
+if (pregunta1.toLowerCase() === "v") {
     alert("¡Correcto! El Sol está compuesto principalmente de hidrógeno y helio.");
     puntaje += 1;
 } else {
@@ -381,7 +381,7 @@ if(pregunta2 = prompt("¿Mercurio tiene una atmósfera densa compuesta principal
     pregunta2 = pregunta2.trim();
 }
 
-if (pregunta2.toLowerCase() === "falso") {
+if (pregunta2.toLowerCase() === "f") {
     alert("¡Correcto! Mercurio no tiene una atmósfera significativa.");
     puntaje += 1;
 } else {
@@ -392,7 +392,7 @@ if(pregunta3 = prompt("¿Venus tiene una rotación retrógrada, lo que significa
     pregunta3 = pregunta3.trim();
 }
 
-if (pregunta3.toLowerCase() === "verdadero") {
+if (pregunta3.toLowerCase() === "v") {
     alert("¡Correcto! Venus tiene una rotación retrógrada.");
     puntaje += 1;
 } else {
@@ -403,7 +403,7 @@ if(pregunta4 = prompt("¿La Tierra tiene más de un satélite natural, siendo la
     pregunta4 = pregunta4.trim();
 }
 
-if (pregunta4.toLowerCase() === "falso") {
+if (pregunta4.toLowerCase() === "f") {
     alert("¡Correcto! La Tierra solo tiene un satélite natural, la Luna.");
     puntaje += 1;
 } else {
@@ -414,7 +414,7 @@ if(pregunta5 = prompt("¿Marte tiene una atmósfera densa compuesta principalmen
     pregunta5 = pregunta5.trim();
 }
 
-if (pregunta5.toLowerCase() === "verdadero") {
+if (pregunta5.toLowerCase() === "v") {
     alert("¡Correcto! Marte tiene una atmósfera delgada, pero compuesta principalmente de dióxido de carbono.");
     puntaje += 1;
 } else {
@@ -425,7 +425,7 @@ if(pregunta6 = prompt("¿Júpiter tiene al menos 79 lunas conocidas?")) {
     pregunta6 = pregunta6.trim();
 }
 
-if (pregunta6.toLowerCase() === "verdadero") {
+if (pregunta6.toLowerCase() === "v") {
     alert("¡Correcto! Júpiter tiene al menos 79 lunas conocidas.");
     puntaje += 1;
 } else {
@@ -436,7 +436,7 @@ if(pregunta7 = prompt("¿Saturno tiene más de 80 lunas conocidas, y Titán es u
     pregunta7 = pregunta7.trim();
 }
 
-if (pregunta7.toLowerCase() === "verdadero") {
+if (pregunta7.toLowerCase() === "v") {
     alert("¡Correcto! Saturno tiene más de 80 lunas conocidas, y Titán es una de las más destacadas.");
     puntaje += 1;
 } else {
@@ -447,7 +447,7 @@ if(pregunta8 = prompt("¿Urano tiene una atmósfera compuesta principalmente de 
     pregunta8 = pregunta8.trim();
 }
 
-if (pregunta8.toLowerCase() === "falso") {
+if (pregunta8.toLowerCase() === "f") {
     alert("¡Correcto! La atmósfera de Urano está compuesta principalmente de hidrógeno, helio y agua.");
     puntaje += 1;
 } else {
@@ -458,7 +458,7 @@ if(pregunta9 = prompt("¿Neptuno tiene vientos extremadamente rápidos y torment
     pregunta9 = pregunta9.trim();
 }
 
-if (pregunta9.toLowerCase() === "verdadero") {
+if (pregunta9.toLowerCase() === "v") {
     alert("¡Correcto! Neptuno tiene vientos extremadamente rápidos y tormentas en su atmósfera.");
     puntaje += 1;
 } else {
@@ -469,7 +469,7 @@ if(pregunta10 = prompt("¿Neptuno tiene 14 lunas conocidas, siendo Tritón la m�
     pregunta10 = pregunta10.trim();
 }
 
-if (pregunta10.toLowerCase() === "verdadero") {
+if (pregunta10.toLowerCase() === "v") {
     alert("¡Correcto! Neptuno tiene 14 lunas conocidas y Tritón es la más grande.");
     puntaje += 1;
 } else {
@@ -479,7 +479,8 @@ if (pregunta10.toLowerCase() === "verdadero") {
 if(puntaje >= 1) {
     alert("¡Felicidades! Has respondido correctamente " + puntaje + " preguntas.");
     document.getElementById("calif").textContent = puntaje + "/10";
-    document.getElementById("resultado").setAttribute("class", "visible");  // Muestra el resultado
+    document.getElementById("imagen-resultado").style.display = "block";
+    document.getElementById("resultado").setAttribute("class", "visible");  
 } else {
     alert("Has respondido " + puntaje + " preguntas correctamente. ¡Sigue intentando!");
 }
